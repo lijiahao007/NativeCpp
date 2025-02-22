@@ -22,6 +22,7 @@ private:
     static std::mutex logMutex;
     static std::string currentDate;
     static std::ofstream logFile;
+    static std::string logDir;
 
     static std::mutex bufferMutex;
     static std::condition_variable cv;
@@ -33,21 +34,21 @@ private:
     static std::string getCurrentDate();
     static void ensureLogFile();
     static void writerWorker();
-    static std::string string_format(const char* format, ...);
-    static void writeToFile(const char* level, const char* tag, const char* message);
-    static void log_impl(int androidLevel, const char *levelStr, const char *tag, const char *format,
-             va_list args);
+    static void writeToFile(const char* level, const char* tag, const std::string& message);
+    static std::string GetTimestamp();
 
 public:
-    static void init();
+    static void init(const std::string &fileDir);
     static void shutdown();
-    static void error(const char *tag, const std::exception &ex);
-    static void verbose(const char *tag, const char *format, ...);
-    static void debug(const char *tag, const char *format, ...);
-    static void info(const char *tag, const char *format, ...);
-    static void warn(const char *tag, const char *format, ...);
-    static void error(const char *tag, const char *format, ...);
-    static void fatal(const char *tag, const char *format, ...);
+
+    static void log_impl(int androidLevel, const char *levelStr, const char *tag, const std::string &message);
+    static void verbose(const char *tag, const std::string &message);
+    static void debug(const char *tag, const std::string &message);
+    static void info(const char *tag, const std::string &message);
+    static void warn(const char *tag, const std::string &message);
+    static void error(const char *tag, const std::string &message);
+    static void fatal(const char *tag, const std::string &message);
+
 };
 
 
