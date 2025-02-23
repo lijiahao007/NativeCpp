@@ -8,4 +8,6 @@ public class NativeCppLibrary {
     public static native void initLogFile(String logDir);
     public static native void logNative(String msg);
 
+    public static native void runDemo();
+
 }

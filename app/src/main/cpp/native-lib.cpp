@@ -1,6 +1,7 @@
 #include <jni.h>
 #include <string>
 #include "Utils/LogUtils.h"
+#include "CppDemo/HelloWorldDemo.h"
 
 extern "C"
 JNIEXPORT void JNICALL
@@ -25,4 +26,11 @@ Java_com_lijiahao_nativecpp_library_NativeCppLibrary_logNative(JNIEnv *env, jcla
     const char* msgChar = env->GetStringUTFChars(msg, nullptr);
     LogUtils::info("Native_Ljh_Test", msgChar);
     env->ReleaseStringUTFChars(msg, msgChar);
+}
+
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_lijiahao_nativecpp_library_NativeCppLibrary_runDemo(JNIEnv *env, jclass clazz) {
+    HelloWorldDemo::logHelloWorld();
 }

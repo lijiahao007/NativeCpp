@@ -2,8 +2,6 @@ package com.lijiahao.nativecpp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
-import android.os.Build;
 import android.os.Bundle;
 
 import com.lijiahao.nativecpp.databinding.ActivityMainBinding;
@@ -28,5 +26,7 @@ public class MainActivity extends AppCompatActivity {
             NativeCppLibrary.logNative("MainActivity " + index);
             index++;
         });
+
+        NativeCppLibrary.runDemo();
     }
 }
