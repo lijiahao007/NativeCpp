@@ -8,6 +8,8 @@
 #include <iomanip>
 #include <sstream>
 
+using namespace NativeCpp::Utils;
+
 std::mutex LogUtils::logMutex;
 std::string LogUtils::currentDate;
 std::ofstream LogUtils::logFile;

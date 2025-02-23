@@ -3,6 +3,10 @@
 #include "Utils/LogUtils.h"
 #include "CppDemo/HelloWorldDemo.h"
 
+using namespace NativeCpp;
+using namespace Utils;
+using namespace CppDemo;
+
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lijiahao_nativecpp_library_NativeCppLibrary_initLogFile(JNIEnv *env, jclass clazz,
@@ -12,7 +16,6 @@ Java_com_lijiahao_nativecpp_library_NativeCppLibrary_initLogFile(JNIEnv *env, jc
 
     // 调用初始化方法（添加参数传递）
     LogUtils::init(nativeLogDir);  // 使用头文件中的const std::string&参数版本
-
 
     LogUtils::info("Native_Ljh_Test", "native_C++ helloworld");
     // 释放JNI字符串资源
