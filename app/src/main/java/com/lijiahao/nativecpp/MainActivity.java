@@ -9,9 +9,7 @@ import com.lijiahao.nativecpp.library.NativeCppLibrary;
 import com.lijiahao.nativecpp.utils.GetPermissionFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int STORAGE_PERMISSION_CODE = 100;
     private ActivityMainBinding binding;
-    int index = 0;
     public static final String TAG = "MainActivity";
 
     @Override
@@ -19,14 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         GetPermissionFragment.requestStoragePermission(getSupportFragmentManager());
-
-        binding.sampleText.setOnClickListener((view)-> {
-            NativeCppLibrary.logNative("MainActivity " + index);
-            index++;
-        });
-
         NativeCppLibrary.runDemo();
     }
 }

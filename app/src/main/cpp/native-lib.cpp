@@ -19,15 +19,6 @@ Java_com_lijiahao_nativecpp_library_NativeCppLibrary_initLogFile(JNIEnv *env, jc
     env->ReleaseStringUTFChars(log_dir, nativeLogDir);
 }
 
-extern "C"
-JNIEXPORT void JNICALL
-Java_com_lijiahao_nativecpp_library_NativeCppLibrary_logNative(JNIEnv *env, jclass clazz,
-                                                               jstring msg) {
-    const char* msgChar = env->GetStringUTFChars(msg, nullptr);
-    LogUtils::info("Native_Ljh_Test", msgChar);
-    env->ReleaseStringUTFChars(msg, msgChar);
-}
-
 
 extern "C"
 JNIEXPORT void JNICALL
