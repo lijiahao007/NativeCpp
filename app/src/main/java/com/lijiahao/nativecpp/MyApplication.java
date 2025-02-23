@@ -3,6 +3,8 @@ package com.lijiahao.nativecpp;
 import android.app.Application;
 import android.os.Environment;
 
+import com.lijiahao.nativecpp.library.NativeCppLibrary;
+
 import java.io.File;
 
 public class MyApplication extends Application {

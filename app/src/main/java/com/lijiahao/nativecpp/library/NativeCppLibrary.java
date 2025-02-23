@@ -1,4 +1,4 @@
-package com.lijiahao.nativecpp;
+package com.lijiahao.nativecpp.library;
 
 public class NativeCppLibrary {
     static {
