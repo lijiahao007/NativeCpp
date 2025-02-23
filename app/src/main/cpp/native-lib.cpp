@@ -27,4 +27,5 @@ extern "C"
 JNIEXPORT void JNICALL
 Java_com_lijiahao_nativecpp_library_NativeCppLibrary_runDemo(JNIEnv *env, jclass clazz) {
     HelloWorldDemo::logHelloWorld();
+    HelloWorldDemo::基本类型最大最小值();
 }

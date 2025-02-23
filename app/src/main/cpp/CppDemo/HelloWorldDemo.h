@@ -12,6 +12,7 @@ namespace NativeCpp {
         class HelloWorldDemo {
         public:
             static void logHelloWorld();
+            static void 基本类型最大最小值();
         };
     }
 }
