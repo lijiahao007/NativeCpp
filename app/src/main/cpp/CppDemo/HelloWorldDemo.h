@@ -11,6 +11,8 @@ namespace NativeCpp {
     namespace CppDemo {
         class HelloWorldDemo {
         public:
+            static void pointerDemo();
+            static void pointerDemo1(int (*matrix)[5], int rows);
             static void logHelloWorld();
             static void 基本类型最大最小值();
         };

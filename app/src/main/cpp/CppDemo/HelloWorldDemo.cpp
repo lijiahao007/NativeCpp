@@ -47,3 +47,26 @@ void HelloWorldDemo::基本类型最大最小值() {
     LogUtils::info(TAG, string(b.buffer) + " -- " + string(c.buffer));
 
 }
+
+void HelloWorldDemo::pointerDemo() {
+    int matrix[2][5] {
+            {0,1,2,3,4},
+            {5,6,7,8,9}
+    };
+
+    pointerDemo1(matrix, 2);
+}
+
+void HelloWorldDemo::pointerDemo1(int (*matrix)[5], int rows) {
+    ostringstream oss;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < 5; j++) {
+            oss << matrix[i][j] << ", ";
+        }
+        oss << "\n";
+    }
+
+    LogUtils::info(TAG, oss.str());
+
+
+}
