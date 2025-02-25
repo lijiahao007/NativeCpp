@@ -29,4 +29,21 @@ void HelloWorldDemo::基本类型最大最小值() {
     LogUtils::info(TAG, "max[" + to_string(maxValue) + "] min[" + to_string(minValue) + "]");
     LogUtils::info(TAG, "maxF[" + to_string(maxFloatValue) + "] minF[" + to_string(minFloatValue) + "] lowestF[" +
             to_string(lowestFloatValue));
+
+    char a[] = "Hello" "World";
+
+    LogUtils::info(a, "What");
+
+    struct Data {
+        char buffer[32]; // 定长字符数组
+    };
+
+    Data b;
+    strcpy(b.buffer, "Hello");
+
+    Data c = b; // 结构体赋值（逐成员拷贝）
+    strcpy(c.buffer, "World");
+
+    LogUtils::info(TAG, string(b.buffer) + " -- " + string(c.buffer));
+
 }
