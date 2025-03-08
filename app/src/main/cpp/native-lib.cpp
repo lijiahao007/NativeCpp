@@ -31,5 +31,6 @@ Java_com_lijiahao_nativecpp_library_NativeCppLibrary_runDemo(JNIEnv *env, jclass
 //    HelloWorldDemo::pointerDemo();
 //    HelloWorldDemo::stringDemo();
 //    HelloWorldDemo::vectorArrayDemo();
-    HelloWorldDemo::arrDemo();
+//    HelloWorldDemo::arrDemo();
+    HelloWorldDemo::funcDemo();
 }

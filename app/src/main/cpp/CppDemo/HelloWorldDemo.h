@@ -20,9 +20,10 @@ namespace NativeCpp {
             static void vectorArrayDemo();
             static void print2DArr(int (*arr)[5], int size);
             static void arrDemo();
+            static void funcDemo(); // 函数指针demo
         private:
             static std::string printArray(const std::array<int, 10>& array);
-
+            static double funcTools(double (*cal)(double, double), double x, double y);
         };
     }
 }

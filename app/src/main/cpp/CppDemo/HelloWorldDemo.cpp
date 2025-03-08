@@ -184,3 +184,27 @@ void HelloWorldDemo::arrDemo() {
 
     print2DArr(arr, 3);
 }
+
+double add(double a, double b) {
+    ostringstream oss;
+    oss << "add " << a << " + " << b << " = " << a + b;
+    LogUtils::info(TAG, oss.str());
+    return a + b;
+}
+
+void HelloWorldDemo::funcDemo() {
+
+    // 函数指针
+    double (*calFunc)(double, double) = add;
+    ostringstream oss;
+    oss << "FuncTools finish:" << funcTools(calFunc, 10, 10);
+    LogUtils::info(TAG, oss.str());
+}
+
+
+double HelloWorldDemo::funcTools(double(*cal)(double, double), double x, double y) {
+    LogUtils::info(TAG, "funcTools before");
+    double res = cal(x, y);
+    LogUtils::info(TAG, "funcTools after");
+    return res;
+}
