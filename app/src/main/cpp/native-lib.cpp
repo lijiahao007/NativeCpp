@@ -30,5 +30,6 @@ Java_com_lijiahao_nativecpp_library_NativeCppLibrary_runDemo(JNIEnv *env, jclass
 //    HelloWorldDemo::基本类型最大最小值();
 //    HelloWorldDemo::pointerDemo();
 //    HelloWorldDemo::stringDemo();
-    HelloWorldDemo::vectorArrayDemo();
+//    HelloWorldDemo::vectorArrayDemo();
+    HelloWorldDemo::arrDemo();
 }

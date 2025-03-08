@@ -134,8 +134,9 @@ void HelloWorldDemo::vectorArrayDemo() {
     oss << boolalpha;
     oss <<(isdigit(charValue) == 1);
     LogUtils::info(TAG, oss.str());
-
 }
+
+
 
 string HelloWorldDemo::printArray(const array<int, 10>& arr) {
     ostringstream oss;
@@ -147,4 +148,39 @@ string HelloWorldDemo::printArray(const array<int, 10>& arr) {
     }
 
     return oss.str();
+}
+
+
+void HelloWorldDemo::print2DArr(int (*arr)[5], int size) {
+    ostringstream oss;
+    ostringstream oss1;
+    ostringstream oss2;
+    for (int i = 0; i < size; i++) {
+        int* subArr = arr[i];
+        for (int j = 0; j < 5; j++) {
+            oss << subArr[j] << ", ";
+            oss1 << arr[i][j] << ", ";
+        }
+
+        oss2 << **(arr + i) << "\t";
+
+        oss << "\t--\t";
+        oss1 << "\t--\t";
+    }
+
+    LogUtils::info(TAG, oss.str());
+    LogUtils::info(TAG, oss1.str());
+    LogUtils::info(TAG, oss2.str());
+
+
+}
+
+void HelloWorldDemo::arrDemo() {
+    int arr[][5] = {
+            {1,2,3,4,5},
+            {2,3,4,5,6},
+            {3,4,5,6,7}
+    };
+
+    print2DArr(arr, 3);
 }

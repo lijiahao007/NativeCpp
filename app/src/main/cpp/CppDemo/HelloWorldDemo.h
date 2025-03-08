@@ -18,9 +18,11 @@ namespace NativeCpp {
             static void 基本类型最大最小值();
             static void stringDemo();
             static void vectorArrayDemo();
-
+            static void print2DArr(int (*arr)[5], int size);
+            static void arrDemo();
         private:
             static std::string printArray(const std::array<int, 10>& array);
+
         };
     }
 }
